@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Campus Assistant</title>
+    <link rel="stylesheet" href="AI-thoncss.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="font-style: italic;">Smart Campus Assistant</h1>
+
+        <input type="text" id="query" placeholder="Type your query here..." />
+
+        <button onclick="showResponse()">Get Answer</button>
+
+        <div id="response" class="response"></div>
+    </div>
+
+    <script>
+        function showResponse() {
+            const query = document.getElementById('query').value.toLowerCase();
+            let answer = "";
+
+            if (query.includes("library")) {
+                answer = "Library timings: 8 AM - 8 PM.";
+            } else if (query.includes("dining")) {
+                answer = "dining serves Rice, Chicken Curry,vegetable curry, Salad, Juice.";
+            } else if (query.includes("exam")) {
+                answer = "Midterm exams are from 15th to 20th October.";
+            } else if (query.includes("sports")) {
+                answer = "Sports ground available from 6 AM to 9 PM.";
+            } else if (query.includes("admin")) {
+                answer = "Administrative Office: 9 AM - 5 PM.";
+            } else {
+                answer = "Sorry, I don't know the answer.";
+            }
+
+            document.getElementById('response').innerText = answer;
+        }
+    </script>
+</body>
+
+</html>
